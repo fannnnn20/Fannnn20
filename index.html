@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>嶺南驚蟄・電子打小人</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700;900&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <nav class="topbar"><button class="brand" data-action="home">嶺南驚蟄 <i>・</i> 電子打小人</button><span class="season">乙巳年・驚蟄</span><button class="text-button" data-action="culture">民俗小誌</button></nav>
+
+    <section class="page active" id="home">
+      <div class="home-glow"></div><div class="sigil sigil-left">敕</div><div class="sigil sigil-right">鎮</div>
+      <div class="home-content"><p class="eyebrow">LINGNAN RITUAL · AWAKENING OF INSECTS</p><h1>驚蟄打小人</h1><p class="hero-copy">一紙承心事，一擊散霉氣。<br>於香火微光中，放下那些不必再背負的名字。</p><div class="home-actions"><button class="primary" data-action="start">即刻開壇 <span>→</span></button><button class="outline" data-action="culture">瞭解打小人</button></div><p class="disclaimer">本體驗旨在舒緩情緒，請將一切不快留在儀式裡。</p></div>
+      <div class="altar"><div class="candle left-candle"><b></b><i></i></div><div class="incense"><i></i><i></i><i></i></div><div class="censer">⌁</div><div class="candle right-candle"><b></b><i></i></div></div>
+    </section>
+
+    <section class="page culture-page" id="culture"><div class="culture-wrap"><p class="eyebrow">嶺南民俗・一盞心燈</p><h2>一場與自己和解的儀式</h2><div class="culture-grid"><article><span>壹</span><h3>驚蟄之日</h3><p>春雷乍響，百蟲甦醒。嶺南人相信此日可借雷聲震走鬱結，把難言的委屈交給一紙人偶。</p></article><article><span>貳</span><h3>打小人</h3><p>不是為了傷害誰，而是透過有節制的儀式動作，為積壓的情緒尋找一個溫柔出口。</p></article><article><span>叁</span><h3>化寶積德</h3><p>火光把晦氣化成灰燼，木魚聲讓心意回到安靜。願你放下以後，依然柔軟而明亮。</p></article></div><div class="ritual-line"><span>立紙人</span><i></i><span>選法器</span><i></i><span>擊霉氣</span><i></i><span>化寶爐</span><i></i><span>圓滿</span></div><button class="primary" data-action="start">開始這場儀式 <span>→</span></button></div></section>
+
+    <section class="page ritual-page" id="ritual">
+      <header class="ritual-header"><button class="back" data-action="home">← 返回祭壇</button><div id="step-label">第一步 · 立紙人稟告</div><div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></div></header>
+      <div class="ritual-stage">
+        <section class="step active" id="step-1"><div class="form-card"><p class="eyebrow">STEP ONE</p><h2>寫下想放下的事</h2><p class="muted">把困擾寫在紙上，讓儀式替你接住它。</p><label>小人姓名或暱稱 <input id="name" maxlength="12" placeholder="例如：那個總愛刁難我的人" /></label><div><label>所為何事</label><div class="tags"><button>搬弄是非</button><button>工作添堵</button><button>欠錢不還</button><button>言語傷人</button></div><textarea id="reason" placeholder="或寫下你的心事⋯⋯"></textarea></div><button class="primary wide" id="make-doll">立紙人・請願 <span>→</span></button></div><div class="paper-preview"><div class="paper-seal">敕令</div><div class="preview-person"><b></b><i></i></div><p id="preview-name">小人</p></div></section>
+
+        <section class="step" id="step-2"><div class="tool-header"><div><p class="eyebrow">STEP TWO</p><h2>挑一件趁手法器</h2></div><div class="tabs"><button class="active" data-tab="shoes">鞋類</button><button data-tab="kitchen">廚具</button><button data-tab="clean">清潔法具</button></div></div><div class="tool-layout"><div class="tool-list" id="tool-list"></div><aside class="customise"><p>法器配色</p><h3 id="tool-name">人字拖</h3><div class="tool-big" id="tool-big"></div><div class="swatches" id="swatches"></div><div class="motifs" id="motifs"></div><button class="primary wide" id="confirm-tool">確認法器 <span>→</span></button></aside></div></section>
+
+        <section class="step" id="step-3"><div class="battle-meta"><p class="eyebrow">STEP THREE · 開壇擊霉氣</p><h2>請對準紙人擊打</h2><p>每一下，都是替自己討回一點平靜。</p></div><div class="hit-count"><b id="count">0</b><small>/ 10 擊</small><div><i id="progress"></i></div></div><div class="battle"><div class="saying" id="saying">請選擇部位擊打</div><div class="doll intact" id="doll"><span class="doll-name" id="doll-name">小人</span><button data-part="head" class="part head">頭</button><button data-part="face" class="part face">面</button><button data-part="heart" class="part heart">心</button><button data-part="arms" class="part arms">手</button><button data-part="feet" class="part feet">腳</button></div><div class="weapon-float" id="battle-tool"></div></div><button class="primary burn-button" id="go-burn" disabled>請入化寶爐 <span>→</span></button><p class="hint" id="battle-hint">還需擊打 10 下，驅散霉氣。</p></section>
+
+        <section class="step" id="step-4"><div class="burn-wrap"><p class="eyebrow">STEP FOUR · 化寶除厄</p><h2>一縷火光，燒盡不安</h2><p>把所有不愉快，交給爐火與風。</p><div class="furnace"><div class="flame">♨</div><div class="furnace-mouth"></div><div class="furnace-body">化寶爐</div></div><button class="primary" id="burn">投入紙人・化寶 <span>→</span></button></div></section>
+
+        <section class="step" id="step-5"><div class="complete"><p class="eyebrow">STEP FIVE · 功德圓滿</p><h2>願你心安，自在如春</h2><blockquote>「所有委屈與壓抑，都已隨火光化為灰燼。<br>從今以後，願你只與溫柔同行。」</blockquote><div class="merit"><span>今日功德</span><b id="merit">0</b></div><button class="fish" id="fish"><i>◒</i><span>敲木魚</span></button><p class="fish-note">輕敲木魚，讓心慢慢靜下來</p><div class="complete-actions"><button class="outline" data-action="home">返回首頁</button><button class="primary" data-action="start">重新開壇 <span>→</span></button></div></div></section>
+      </div>
+    </section>
+  </main><div class="toast" id="toast"></div><script src="app.js"></script>
+</body></html>
